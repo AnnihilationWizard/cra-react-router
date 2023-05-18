@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 export default function Navbar() {
@@ -12,13 +12,33 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link" to='/'>Home</Link>
+              <NavLink className={({ isActive }) => {
+                return `nav-link ${isActive ? 'newClassName' : ''}`;
+              }} style={({ isActive }) => {
+                return {
+                  color: isActive ? 'red' : 'black'
+                }
+              }} to='/'>
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/about'>About</Link>
+              <NavLink className={({ isActive }) => {
+                return `nav-link ${isActive ? 'newClassName' : ''}`;
+              }} style={({ isActive }) => {
+                return {
+                  color: isActive ? 'red' : 'black'
+                }
+              }} to='/about'>About</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/album'>相簿</Link>
+              <NavLink className={({ isActive }) => {
+                return `nav-link ${isActive ? 'newClassName' : ''}`;
+              }} style={({ isActive }) => {
+                return {
+                  color: isActive ? 'red' : 'black'
+                }
+              }} to='/album'>相簿</NavLink>
             </li>
           </ul>
         </div>
